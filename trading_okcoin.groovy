@@ -23,13 +23,14 @@ import org.oxerr.okcoin.rest.service.polling.OKCoinTradeService
 import org.slf4j.LoggerFactory
 
 class Trading {
-    def logger = LoggerFactory.getLogger(Trading.class)
-    def cfg
+    def logger = LoggerFactory.getLogger(Trading.class)//定义log
+    def cfg //配置文件
 
     Trading(cfg) {
         this.cfg = cfg
     }
 
+    //定义交易配置
     def createExchange(apiKey, secKey) {
         def exchange = new OKCoinExchange()
         def exchangeSpec = new ExchangeSpecification(exchange.class)
